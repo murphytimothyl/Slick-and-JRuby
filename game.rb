@@ -1,16 +1,4 @@
-$:.push File.expand_path('../lib', __FILE__)
-
-require 'java'
-require 'lwjgl.jar'
-require 'slick.jar'
-
-require 'src/c'
-require 'src/menu'
-require 'src/play'
-
-java_import 'org.newdawn.slick.AppGameContainer'
-java_import 'org.newdawn.slick.SlickException'
-java_import 'org.newdawn.slick.state.StateBasedGame'
+require 'src/initializer'
 
 class Game < StateBasedGame
   
