@@ -1,8 +1,3 @@
-java_import 'org.lwjgl.input.Mouse'
-java_import 'org.newdawn.slick.Input'
-java_import 'org.newdawn.slick.Image'
-java_import 'org.newdawn.slick.state.BasicGameState'
-
 class Menu < BasicGameState
 
   def initialize(id)
