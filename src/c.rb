@@ -1,6 +1,6 @@
 module C
   
-  NAME = 'Bucky World'
+  NAME = "Bucky's Ruby Land"
   WIDTH, HEIGHT = 640, 360
   
   MENU = 0
