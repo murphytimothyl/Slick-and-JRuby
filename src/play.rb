@@ -16,6 +16,9 @@ class Play < BasicGameState
     
     @bucky_vel = 0.3
     @bucky_x, @bucky_y = 100, 100
+    
+    @white = Color.new(1.0, 1.0, 1.0)
+    @gray = Color.new(0.1, 0.1, 0.1)
 
     @world_map = Image.new('res/world.png')
     
@@ -87,17 +90,17 @@ class Play < BasicGameState
     @world_map.draw(-@bucky_x, @bucky_y)
     @bucky.draw(C::WIDTH / 2, C::HEIGHT / 2)
     
-    g.set_color(Color.new(1.0, 1.0, 1.0))
+    g.set_color(@white)
     
     str = "Bucky's Position: (%.1f, %.1f)" % [@bucky_x, @bucky_y]
     g.draw_string(str, 330, 10)
     
     if @quit
       
-      g.set_color(Color.new(0.1, 0.1, 0.1))
+      g.set_color(@gray)
       g.fill_rect(240, 98, 136, 126)
       
-      g.set_color(Color.new(0.8, 1.0, 1.0))
+      g.set_color(@white)
       g.draw_string('Resume (r)', 250, 100)
       g.draw_string('Main Menu (m)', 250, 150)
       g.draw_string('Quit (q)', 250, 200)
