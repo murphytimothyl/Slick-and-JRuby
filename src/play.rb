@@ -1,7 +1,3 @@
-java_import 'org.newdawn.slick.Color'
-java_import 'org.newdawn.slick.Animation'
-java_import 'org.newdawn.slick.state.BasicGameState'
-
 class Play < BasicGameState
 
   def initialize(id)
