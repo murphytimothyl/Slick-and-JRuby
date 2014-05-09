@@ -1,1 +1,1 @@
-This is a JRuby rewrite of TheNewBoston's [Java Game Development with Slick](https://www.youtube.com/watch?v=AXNDBQfCd08) tutorials.
+This is a JRuby rewrite of TheNewBoston's [Java Game Development with Slick](https://www.youtube.com/watch?v=AXNDBQfCd08) tutorials. I included his resources, because I made a few slight changes to them just for better visibility.
