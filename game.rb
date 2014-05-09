@@ -45,4 +45,3 @@ rescue SlickException => e
   puts e.print_stack_trace
 
 end
-
