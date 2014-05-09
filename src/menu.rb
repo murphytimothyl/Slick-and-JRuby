@@ -1,13 +1,7 @@
-$:.push File.expand_path('../lib', __FILE__)
-
-require 'java'
-require 'lwjgl.jar'
-require 'slick.jar'
-
 java_import 'org.lwjgl.input.Mouse'
 java_import 'org.newdawn.slick.Input'
-java_import 'org.newdawn.slick.state.BasicGameState'
 java_import 'org.newdawn.slick.Image'
+java_import 'org.newdawn.slick.state.BasicGameState'
 
 class Menu < BasicGameState
 
@@ -22,22 +16,28 @@ class Menu < BasicGameState
   def init(container, game)
     
     @play = Image.new('res/playNow.png')
+    @play_x, @play_y = 220, 109
     @exit = Image.new('res/exitGame.png')
+    @exit_x, @exit_y = 220, 209
     
   end
   
   
   def update(container, game, delta)
 
-    x, y = Mouse.x, Mouse.y
     input = container.get_input
+    x, y = Mouse.x, C::HEIGHT - Mouse.y
     
     if Mouse.is_button_down(0)
     
-      if x > 100 and x < 311 and y > 209 and y < 260
-        game.enter_state(C::PLAY)
-      elsif x > 100 and x < 311 and y > 109 and y < 160
-        java.lang.System.exit(0)
+      if x.between?(@play_x, @play_x + @play.width)
+        
+        if y.between?(@play_y, @play_y + @play.height)
+          game.enter_state(C::PLAY)
+        elsif y.between?(@exit_y, @exit_y + @exit.height)
+          java.lang.System.exit(0)
+        end
+        
       end
     
     end
@@ -47,16 +47,16 @@ class Menu < BasicGameState
   
   def render(container, game, g)
     
-    g.draw_string('Bucky World', 100, 50)
+    g.draw_string("Bucky's Ruby Land", 240, 50)
     
-    @play.draw(100, 100)
-    @exit.draw(100, 200)
+    @play.draw(@play_x, @play_y)
+    @exit.draw(@exit_x, @exit_y)
     
   end
   
   
   def getID
-    return @id
+    @id
   end
   
 end
