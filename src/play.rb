@@ -90,8 +90,6 @@ class Play < BasicGameState
     @world_map.draw(-@bucky_x, @bucky_y)
     @bucky.draw(C::WIDTH / 2, C::HEIGHT / 2)
     
-    g.set_color(@white)
-    
     str = "Bucky's Position: (%.1f, %.1f)" % [@bucky_x, @bucky_y]
     g.draw_string(str, 330, 10)
     
